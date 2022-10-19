@@ -1,5 +1,6 @@
 package com.example.restApi;
 
+import com.example.restApi.Service.DocumentReaderService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,13 +9,9 @@ import java.io.FileNotFoundException;
 @SpringBootApplication
 public class Main {
 
-    public static String path(){
-        return "src/main/resources/sample2.pdf";
-    }
-
     public static void main(String[] args) throws FileNotFoundException {
 
-        DocumentReader docReader = new DocumentReader();
+        DocumentReaderService docReader = new DocumentReaderService();
 
         try{
             docReader.importPDF();

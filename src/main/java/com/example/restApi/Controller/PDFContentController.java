@@ -1,5 +1,6 @@
-package com.example.restApi;
+package com.example.restApi.Controller;
 
+import com.example.restApi.Service.DocumentReaderService;
 import org.apache.tika.exception.TikaException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,28 +10,23 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Map;
 
-import static com.example.restApi.Main.path;
-
 @RestController
-public class Controller {
+public class PDFContentController {
 
-    DocumentReader docReader = new DocumentReader();
+    DocumentReaderService docReader = new DocumentReaderService();
 
-    public Controller() throws FileNotFoundException {
+    public PDFContentController() throws FileNotFoundException {
     }
 
-    @GetMapping("/")
-    public String index(){
-        return "ohayo!!";
-    }
 
     @GetMapping("/text")
     public String text() throws TikaException, IOException, SAXException {
         return docReader.getDocumentText();
     }
 
-    @GetMapping("/meta")
+    @GetMapping("/metadata")
     public Map<String, String> meta() throws TikaException, IOException, SAXException {
         return docReader.getMetaData();
     }
+
 }
