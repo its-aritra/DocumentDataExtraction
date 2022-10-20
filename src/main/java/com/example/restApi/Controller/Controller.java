@@ -67,21 +67,6 @@ public class Controller {
                 .body(resource);
     }
 
-
-    //    @GetMapping("/text")
-//    public String getExtractedText(String file) throws NullPointerException {
-//        return dataExtractionService.getExtractedText(file);
-//    }
-//
-//    @GetMapping("/metadata")
-//    public Map<String, String> getMetadata(String file) throws NullPointerException {
-//        return dataExtractionService.getMetadata(file);
-//    }
-//
-//    @GetMapping("/sigInfo")
-//    public List<PDFSignatureInfo> getSignatureInfo(String file) throws NullPointerException {
-//        return dataExtractionService.getSignatureInfo(file);
-//    }
     @GetMapping("/text")
     public ResponseEntity<String> getExtractedText() throws IOException {
 //        System.out.println(fileN + "inText");
