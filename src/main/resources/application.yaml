@@ -3,4 +3,4 @@ server:
 
 file:
     storage:
-        location: src/main/resources
+        location: src/main/resources/
